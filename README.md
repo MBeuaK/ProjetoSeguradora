@@ -20,8 +20,8 @@ Você o executa usando o java -jarcomando.
 
 > Body:
 {
-"username": "equiplano",
-"password": "equiplano@2022"
+"username": "usuario",
+"password": "usuario@2022"
 }
 
 ## Tecnologias...
