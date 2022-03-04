@@ -1,5 +1,5 @@
 # Escopo e objetivo
-Projeto é destino para aprimorar e amadurecer meu conhecimento em api e Java
+O objetivo do projeto é aprimorar e amadurecer meu conhecimento em api e Java
 
 ## Como executar...
 Este aplicativo é empacotado como um war que possui o Tomcat 8 incorporado. Nenhuma instalação do Tomcat ou JBoss é necessária. 
