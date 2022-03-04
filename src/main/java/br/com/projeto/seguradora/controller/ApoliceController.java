@@ -19,6 +19,7 @@ import com.projeto.seguradora.model.dto.BaseResponseDTO;
 
 import br.com.projeto.seguradora.service.ApoliceService;
 import br.com.projeto.seguradora.util.MensagemUtil;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/api/v1/apolice")
@@ -29,7 +30,7 @@ public class ApoliceController extends BaseController {
 	@Autowired
 	private ApoliceService apoliceService;
 
-
+	@ApiOperation(value = "Cria a apolice", notes = "Cria a apolice")
 	@PostMapping
 	public ResponseEntity<BaseResponseDTO> criar(@RequestBody ApoliceDTO apoliceDTO) {
 		try {
@@ -40,6 +41,7 @@ public class ApoliceController extends BaseController {
 		}
 	}
 
+	@ApiOperation(value = "Busca todas as apolices", notes = "Busca todas as apolices")
 	@GetMapping(value = "/buscar")
 	public ResponseEntity<BaseResponseDTO> buscar() {
 		try {
@@ -50,6 +52,7 @@ public class ApoliceController extends BaseController {
 		}
 	}
 
+	@ApiOperation(value = "Busca uma apolice pelo id", notes = "Busca uma apolice pelo id")
 	@GetMapping(value = "/buscar-apolice/{id}")
 	public ResponseEntity<BaseResponseDTO> buscarPorId(@PathVariable(value = "id", required = true) Long id) {
 		try {
@@ -60,6 +63,7 @@ public class ApoliceController extends BaseController {
 		}
 	}
 
+	@ApiOperation(value = "Edita uma apolice pelo id", notes = "Edita uma apolice pelo id")
 	@PutMapping("/editar-apolice/{id}")
 	public ResponseEntity<BaseResponseDTO> editar(@PathVariable(value = "id", required = true) Long id,
 			@RequestBody(required = true) ApoliceDTO apoliceDTO) {
@@ -71,6 +75,7 @@ public class ApoliceController extends BaseController {
 		}
 	}
 
+	@ApiOperation(value = "Remover uma apolice pelo id", notes = "Remover uma apolice pelo id")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<BaseResponseDTO> cancelar(@PathVariable(value = "id", required = true) Long id) {
 		try {

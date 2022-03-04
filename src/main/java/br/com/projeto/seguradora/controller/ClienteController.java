@@ -21,6 +21,7 @@ import com.projeto.seguradora.model.dto.ClienteDTO;
 
 import br.com.projeto.seguradora.service.ClienteService;
 import br.com.projeto.seguradora.util.MensagemUtil;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/api/v1/cliente")
@@ -30,6 +31,7 @@ public class ClienteController extends BaseController {
 	@Autowired
 	private ClienteService clienteService;
 
+	@ApiOperation(value = "Cadastra um cliente", notes = "Cadastra um cliente")
 	@PostMapping
 	public ResponseEntity<BaseResponseDTO> criar(@RequestBody ClienteDTO clienteDTO) {
 		try {
@@ -40,6 +42,7 @@ public class ClienteController extends BaseController {
 		}
 	}
 
+	@ApiOperation(value = "Busca todos os clientes", notes = "Busca todos os clientes")
 	@GetMapping(value = "/buscar")
 	public ResponseEntity<BaseResponseDTO> buscar() {
 		try {
@@ -50,6 +53,7 @@ public class ClienteController extends BaseController {
 		}
 	}
 
+	@ApiOperation(value = "Busca um cliente pelo id", notes = "Busca um cliente pelo id")
 	@GetMapping(value = "/buscar-cliente/{id}")
 	public ResponseEntity<BaseResponseDTO> buscarPorId(@PathVariable(value = "id", required = true) Long id) {
 		try {
@@ -60,6 +64,7 @@ public class ClienteController extends BaseController {
 		}
 	}
 
+	@ApiOperation(value = "Edita um cliente pelo id", notes = "Edita um cliente pelo id")
 	@PutMapping("/editar-cliente/{id}")
 	public ResponseEntity<BaseResponseDTO> editar(@PathVariable(value = "id", required = true) Long id,
 			@RequestBody(required = true) ClienteDTO clienteDTO) {
@@ -71,6 +76,7 @@ public class ClienteController extends BaseController {
 		}
 	}
 
+	@ApiOperation(value = "Remove um cliente pelo id", notes = "Remove um cliente pelo id")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<BaseResponseDTO> cancelar(@PathVariable(value = "id", required = true) Long id) {
 		try {
